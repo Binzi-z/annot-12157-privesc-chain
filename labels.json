@@ -1,0 +1,19 @@
+{
+  "events": [
+    {
+      "kind": "privilege_escalation",
+      "user": "deploy",
+      "evidence": "普通账号 sudo 起 shell 后立刻以 root 登录"
+    },
+    {
+      "kind": "lateral_movement",
+      "ips": [
+        "10.20.1.51",
+        "10.20.1.52"
+      ],
+      "user": "deploy",
+      "evidence": "同一个 key 在 40 秒内登录两台主机"
+    }
+  ],
+  "note": "benign look-alikes are intentionally unlabelled"
+}
