@@ -1,1 +1,1 @@
-我们的日志检测器现在只按关键词告警，分析师大半时间在翻误报。普通账号 sudo 起 shell 之后换主机继续操作。 请实现检测器：① 从事件序列判定攻击是否成立，覆盖题目要求的攻击类型；② 对 labels.json 里的标注事件全部命中，未标注的良性相似流量零误报；③ 每条告警给出时间窗口、涉及实体与按序排列的事件链，并说明判定依赖的阈值；④ 判定不了的序列列入 needs_review 并写明缺哪类信息；⑤ 输出 findings.json，含 rule、first_seen、last_seen、entities、evidence。
+普通账号 sudo 起 shell 在运维里很常见，真正的问题是起 shell 之后做了什么。请实现检测器：① 以 sudo 为起点向后追动作（写计划任务、拉远端脚本、换主机），判断提权链是否成立；② 对 labels.json 的标注全部命中，日常 sudo 零误报；③ 每条告警给出起点与后续动作的完整序列，标注哪些动作构成判定依据；④ 序列不完整的列入 needs_review 并写明缺哪一步；⑤ 输出 findings.json，含 rule、first_seen、last_seen、entities、evidence。
